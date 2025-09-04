@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Metas Financeiras</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    }
+    header h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: bold; }
+    header p { font-size: 1.2rem; opacity: 0.9; }
+    section { padding: 50px 20px; max-width: 1100px; margin: auto; }
+    h2 { text-align: center; font-size: 2rem; margin-bottom: 30px; color: #4CAF50; }
+    .features { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; margin-top: 30px; }
+    .card {
+      background: #1e1e1e; padding: 30px; border-radius: 15px;
+      flex: 1 1 250px; max-width: 300px; text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s; border: 1px solid #333;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(76,175,80,0.2); }
+    .card h3 { color: #4CAF50; margin-bottom: 15px; font-size: 1.3rem; }
+    .btn {
+      display: inline-block; margin-top: 20px; padding: 15px 30px; width: 100%;
+      background: #4CAF50; color: white; text-decoration: none; font-weight: bold;
+      border-radius: 8px; transition: background 0.3s; font-size: 1.1rem;
+    }
+    .btn:hover { background: #388E3C; }
+    .screenshots { background: #1a1a1a; border-radius: 15px; padding: 40px; margin: 40px 0; text-align: center; }
+    .screenshots img {
+      display: block; margin: 0 auto; max-width: 90%; border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+    .pricing-section { background: #1a1a1a; border-radius: 15px; padding: 40px; }
+    .pricing {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 50px; margin-top: 30px;
+    }
+    .pricing .card {
+      background: #2a2a2a; border: 2px solid #4CAF50;
+      flex: 1 1 300px; max-width: 320px;
+    }
+    .pricing .card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+    .pricing .card p { font-size: 1.8rem; font-weight: bold; color: #4CAF50; margin: 15px 0; }
+    footer {
+      text-align: center; background: #0f0f0f; padding: 30px;
+      font-size: 0.9rem; color: #bbb; border-top: 1px solid #333;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      .card { max-width: 100%; }
+      h2 { font-size: 1.6rem; }
+    }
+    @media (max-width: 480px) {
+      header { padding: 40px 15px; }
+      header h1 { font-size: 1.6rem; }
+      header p { font-size: 0.9rem; }
+      section { padding: 30px 15px; }
+      .btn { padding: 12px; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📊 Calculadora de Metas Financeiras</h1>
+    <p>Controle total das suas metas e da sua banca de forma simples, segura e inteligente.<br>
+    A ferramenta definitiva para traders e gestores de banca.</p>
+  </header>
+
+  <section>
+    <h2>Por que escolher nossa calculadora?</h2>
+    <div class="features">
+      <div class="card">
+        <h3>📊 Planejamento Inteligente</h3>
+        <p>Calcule quantos dias bons e ruins você pode ter e saiba se sua meta é realmente alcançável antes mesmo de começar.</p>
+      </div>
+      <div class="card">
+        <h3>🎯 Acompanhamento Diário</h3>
+        <p>Registre cada resultado, veja seu progresso em tempo real com barra de progresso e análise inteligente.</p>
+      </div>
+      <div class="card">
+        <h3>🛡️ Gestão de Risco</h3>
+        <p>Configure banca disponível, defina limites de perda e receba alertas automáticos antes de comprometer sua meta.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="screenshots">
+    <h2>Veja o sistema em ação</h2>
+    <p style="text-align: center; margin-bottom: 20px; opacity: 0.8;">Interface real rodando em desktop</p>
+    <img src="image.png" alt="App rodando no PC">
+  </section>
+
+  <section class="pricing-section">
+    <h2>Planos e Preços</h2>
+    <p style="text-align: center; margin-bottom: 30px; opacity: 0.8;">Escolha o plano ideal para suas necessidades</p>
+    <div class="pricing">
+      <div class="card">
+        <h3>💳 Plano Mensal</h3>
+        <p>R$ 19,90<span style="font-size: 0.8rem; color: #ccc;">/mês</span></p>
+        <a class="btn" href="https://pay.kirvano.com/d9d2a24d-abb5-4ce3-9b1a-0e8d1fc1b92c" target="_blank">Começar Agora</a>
+      </div>
+      <div class="card">
+        <h3>🏆 Plano Anual</h3>
+        <p>R$ 149,00<span style="font-size: 0.8rem; color: #ccc;">/ano</span></p>
+        <a class="btn" href="https://pay.kirvano.com/c64c54f8-c182-4eab-bcb5-8ee93dcf496d" target="_blank">Melhor Oferta</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="text-align: center; background: #1a1a1a; border-radius: 15px; padding: 40px;">
+    <h2>🚀 Comece hoje mesmo!</h2>
+    <p style="font-size: 1.1rem; margin: 20px 0; opacity: 0.9;">
+      Pare de operar no escuro. Tenha controle total das suas metas e proteja sua banca com inteligência.
+    </p>
+    <a class="btn" href="https://pay.kirvano.com/c64c54f8-c182-4eab-bcb5-8ee93dcf496d" target="_blank" style="max-width: 300px; margin: 20px auto;">
+      💎 Garantir Minha Licença
+    </a>
+    <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.7;">
+      🔒 Pagamento 100% seguro via Kirvano
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Calculadora de Metas Financeiras - Todos os direitos reservados.</p>
+    <p style="margin-top: 10px; font-size: 0.8rem;">
+      Desenvolvido para traders, apostadores e gestores de banca que levam seus resultados a sério.
+    </p>
+  </footer>
+</body>
+</html>
