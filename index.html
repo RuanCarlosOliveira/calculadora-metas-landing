@@ -255,9 +255,11 @@
       background: var(--bg-secondary); 
       border-radius: 20px; 
       padding: 60px; 
-      margin: 60px 0; 
+      margin: 0 auto; 
       text-align: center;
       border: 1px solid var(--border-color);
+      max-width: 100%;
+      width: 100%;
     }
     
     .screenshots img {
@@ -477,12 +479,14 @@
   </section>
 
   <!-- Screenshots Section -->
-  <section class="screenshots" id="screenshots">
+  <section id="screenshots">
     <h2>Veja o sistema em ação</h2>
     <p style="text-align: center; margin-bottom: 30px; color: var(--text-secondary); font-size: 1.1rem;">
       Interface moderna e intuitiva rodando em desktop
     </p>
-    <img src="image.png" alt="Calculadora de Metas Financeiras - Interface Principal" class="fade-in">
+    <div class="screenshots">
+      <img src="image.png" alt="Calculadora de Metas Financeiras - Interface Principal" class="fade-in">
+    </div>
   </section>
 
   <!-- Pricing Section -->
