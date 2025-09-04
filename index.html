@@ -3,139 +3,591 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Metas Financeiras</title>
+  <title>Calculadora de Metas Financeiras - Controle Total da Sua Banca</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Calculadora de metas financeiras para traders e gestores de banca. Planejamento inteligente, acompanhamento diário e gestão de risco avançada.">
+  <meta name="keywords" content="calculadora, metas financeiras, trading, gestão de banca, planejamento, risco, acompanhamento">
+  <meta name="author" content="Ruan Carlos Oliveira">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Calculadora de Metas Financeiras - Controle Total da Sua Banca">
+  <meta property="og:description" content="A ferramenta definitiva para traders e gestores de banca. Planejamento inteligente, acompanhamento diário e gestão de risco avançada.">
+  <meta property="og:image" content="https://ruancarlosoliveira.github.io/calculadora-metas-landing/image.png">
+  <meta property="og:url" content="https://ruancarlosoliveira.github.io/calculadora-metas-landing/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Calculadora de Metas Financeiras">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de Metas Financeiras - Controle Total da Sua Banca">
+  <meta name="twitter:description" content="A ferramenta definitiva para traders e gestores de banca. Planejamento inteligente, acompanhamento diário e gestão de risco avançada.">
+  <meta name="twitter:image" content="https://ruancarlosoliveira.github.io/calculadora-metas-landing/image.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="image.png">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary-color: #4CAF50;
+      --primary-dark: #2E7D32;
+      --primary-light: #66BB6A;
+      --secondary-color: #FF6B35;
+      --accent-color: #2196F3;
+      --bg-primary: #0A0A0A;
+      --bg-secondary: #121212;
+      --bg-card: #1E1E1E;
+      --bg-card-hover: #2A2A2A;
+      --text-primary: #FFFFFF;
+      --text-secondary: #B0B0B0;
+      --text-muted: #808080;
+      --border-color: #333333;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      --shadow-hover: 0 8px 40px rgba(76, 175, 80, 0.2);
+    }
+    
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    
     body {
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
       line-height: 1.6;
+      overflow-x: hidden;
     }
+    
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Header */
     header {
+      position: relative;
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      padding: 80px 20px;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      overflow: hidden;
     }
-    header h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: bold; }
-    header p { font-size: 1.2rem; opacity: 0.9; }
-    section { padding: 50px 20px; max-width: 1100px; margin: auto; }
-    h2 { text-align: center; font-size: 2rem; margin-bottom: 30px; color: #4CAF50; }
-    .features { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; margin-top: 30px; }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+    }
+    
+    header h1 { 
+      font-size: 3.5rem; 
+      margin-bottom: 20px; 
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    
+    header p { 
+      font-size: 1.3rem; 
+      opacity: 0.95;
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    nav a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Sections */
+    section { 
+      padding: 80px 20px; 
+      max-width: 1200px; 
+      margin: auto; 
+    }
+    
+    h2 { 
+      text-align: center; 
+      font-size: 2.5rem; 
+      margin-bottom: 50px; 
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    
+    /* Features Grid */
+    .features { 
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px; 
+      margin-top: 50px; 
+    }
+    
     .card {
-      background: #1e1e1e; padding: 30px; border-radius: 15px;
-      flex: 1 1 250px; max-width: 300px; text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s; border: 1px solid #333;
+      background: var(--bg-card); 
+      padding: 40px; 
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
     }
-    .card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(76,175,80,0.2); }
-    .card h3 { color: #4CAF50; margin-bottom: 15px; font-size: 1.3rem; }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: var(--shadow-hover);
+      background: var(--bg-card-hover);
+    }
+    
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .card h3 { 
+      color: var(--primary-color); 
+      margin-bottom: 20px; 
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    
+    .card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    
+    /* Buttons */
     .btn {
-      display: inline-block; margin-top: 20px; padding: 15px 30px; width: 100%;
-      background: #4CAF50; color: white; text-decoration: none; font-weight: bold;
-      border-radius: 8px; transition: background 0.3s; font-size: 1.1rem;
+      display: inline-block; 
+      margin-top: 25px; 
+      padding: 18px 35px; 
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      color: white; 
+      text-decoration: none; 
+      font-weight: 600;
+      border-radius: 12px; 
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
-    .btn:hover { background: #388E3C; }
-    .screenshots { background: #1a1a1a; border-radius: 15px; padding: 40px; margin: 40px 0; text-align: center; }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn:hover { 
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+    }
+    
+    .btn:hover::before {
+      left: 100%;
+    }
+    
+    /* Screenshots Section */
+    .screenshots { 
+      background: var(--bg-secondary); 
+      border-radius: 20px; 
+      padding: 60px; 
+      margin: 60px 0; 
+      text-align: center;
+      border: 1px solid var(--border-color);
+    }
+    
     .screenshots img {
-      display: block; margin: 0 auto; max-width: 90%; border-radius: 10px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      display: block; 
+      margin: 0 auto; 
+      max-width: 90%; 
+      border-radius: 15px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
     }
-    .pricing-section { background: #1a1a1a; border-radius: 15px; padding: 40px; }
+    
+    .screenshots img:hover {
+      transform: scale(1.02);
+    }
+    
+    /* Pricing Section */
+    .pricing-section { 
+      background: var(--bg-secondary); 
+      border-radius: 20px; 
+      padding: 60px;
+      border: 1px solid var(--border-color);
+    }
+    
     .pricing {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 50px; margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px; 
+      margin-top: 50px;
     }
+    
     .pricing .card {
-      background: #2a2a2a; border: 2px solid #4CAF50;
-      flex: 1 1 300px; max-width: 320px;
+      background: var(--bg-card); 
+      border: 2px solid var(--primary-color);
+      position: relative;
     }
-    .pricing .card h3 { font-size: 1.5rem; margin-bottom: 10px; }
-    .pricing .card p { font-size: 1.8rem; font-weight: bold; color: #4CAF50; margin: 15px 0; }
+    
+    .pricing .card.featured {
+      border-color: var(--secondary-color);
+      transform: scale(1.05);
+    }
+    
+    .pricing .card.featured::after {
+      content: 'MAIS POPULAR';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--secondary-color);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .pricing .card h3 { 
+      font-size: 1.6rem; 
+      margin-bottom: 15px; 
+    }
+    
+    .pricing .card .price { 
+      font-size: 2.5rem; 
+      font-weight: 700; 
+      color: var(--primary-color); 
+      margin: 20px 0;
+    }
+    
+    .pricing .card .price span {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      text-align: center; 
+      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card)); 
+      border-radius: 20px; 
+      padding: 60px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .cta-section h2 {
+      margin-bottom: 20px;
+    }
+    
+    .cta-section p {
+      font-size: 1.2rem; 
+      margin: 25px 0; 
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .btn-cta {
+      max-width: 350px;
+      margin: 30px auto;
+      font-size: 1.2rem;
+      padding: 20px 40px;
+    }
+    
+    /* Footer */
     footer {
-      text-align: center; background: #0f0f0f; padding: 30px;
-      font-size: 0.9rem; color: #bbb; border-top: 1px solid #333;
+      text-align: center; 
+      background: var(--bg-primary); 
+      padding: 50px 20px;
+      font-size: 0.95rem; 
+      color: var(--text-muted); 
+      border-top: 1px solid var(--border-color);
     }
+    
+    footer p {
+      margin-bottom: 10px;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    /* Responsive Design */
     @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      header p { font-size: 1.1rem; }
+      h2 { font-size: 2rem; }
+      .features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+      .pricing .card.featured {
+        transform: none;
+      }
+      nav ul {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header { padding: 60px 15px; }
       header h1 { font-size: 2rem; }
       header p { font-size: 1rem; }
-      .card { max-width: 100%; }
-      h2 { font-size: 1.6rem; }
-    }
-    @media (max-width: 480px) {
-      header { padding: 40px 15px; }
-      header h1 { font-size: 1.6rem; }
-      header p { font-size: 0.9rem; }
-      section { padding: 30px 15px; }
-      .btn { padding: 12px; font-size: 1rem; }
+      section { padding: 50px 15px; }
+      .btn { padding: 15px 25px; font-size: 1rem; }
+      .card { padding: 30px 20px; }
+      .screenshots { padding: 40px 20px; }
+      .pricing-section { padding: 40px 20px; }
+      .cta-section { padding: 40px 20px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>📊 Calculadora de Metas Financeiras</h1>
-    <p>Controle total das suas metas e da sua banca de forma simples, segura e inteligente.<br>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Início</a></li>
+      <li><a href="#features">Recursos</a></li>
+      <li><a href="#screenshots">Demonstração</a></li>
+      <li><a href="#pricing">Preços</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home">
+    <h1 class="fade-in">📊 Calculadora de Metas Financeiras</h1>
+    <p class="fade-in">Controle total das suas metas e da sua banca de forma simples, segura e inteligente.<br>
     A ferramenta definitiva para traders e gestores de banca.</p>
   </header>
 
-  <section>
+  <!-- Features Section -->
+  <section id="features">
     <h2>Por que escolher nossa calculadora?</h2>
     <div class="features">
-      <div class="card">
+      <div class="card fade-in">
         <h3>📊 Planejamento Inteligente</h3>
-        <p>Calcule quantos dias bons e ruins você pode ter e saiba se sua meta é realmente alcançável antes mesmo de começar.</p>
+        <p>Calcule quantos dias bons e ruins você pode ter e saiba se sua meta é realmente alcançável antes mesmo de começar. Análise de cenários com múltiplas variáveis.</p>
       </div>
-      <div class="card">
+      <div class="card fade-in">
         <h3>🎯 Acompanhamento Diário</h3>
-        <p>Registre cada resultado, veja seu progresso em tempo real com barra de progresso e análise inteligente.</p>
+        <p>Registre cada resultado, veja seu progresso em tempo real com barra de progresso e análise inteligente. Status contextual para cada operação.</p>
       </div>
-      <div class="card">
+      <div class="card fade-in">
         <h3>🛡️ Gestão de Risco</h3>
-        <p>Configure banca disponível, defina limites de perda e receba alertas automáticos antes de comprometer sua meta.</p>
+        <p>Configure banca disponível, defina limites de perda e receba alertas automáticos antes de comprometer sua meta. Proteção inteligente do seu capital.</p>
+      </div>
+      <div class="card fade-in">
+        <h3>💾 Persistência de Dados</h3>
+        <p>Salve suas simulações e histórico completo. Recupere dados a qualquer momento e compartilhe estratégias com outros usuários.</p>
+      </div>
+      <div class="card fade-in">
+        <h3>🔒 Sistema de Licenças</h3>
+        <p>Segurança avançada com criptografia AES, hardware binding e validação online. Suas licenças protegidas contra clonagem.</p>
+      </div>
+      <div class="card fade-in">
+        <h3>📈 Análise Avançada</h3>
+        <p>Métricas de performance, sugestões de otimização e feedback motivacional. Transforme dados em insights acionáveis.</p>
       </div>
     </div>
   </section>
 
-  <section class="screenshots">
+  <!-- Screenshots Section -->
+  <section class="screenshots" id="screenshots">
     <h2>Veja o sistema em ação</h2>
-    <p style="text-align: center; margin-bottom: 20px; opacity: 0.8;">Interface real rodando em desktop</p>
-    <img src="image.png" alt="App rodando no PC">
+    <p style="text-align: center; margin-bottom: 30px; color: var(--text-secondary); font-size: 1.1rem;">
+      Interface moderna e intuitiva rodando em desktop
+    </p>
+    <img src="image.png" alt="Calculadora de Metas Financeiras - Interface Principal" class="fade-in">
   </section>
 
-  <section class="pricing-section">
+  <!-- Pricing Section -->
+  <section class="pricing-section" id="pricing">
     <h2>Planos e Preços</h2>
-    <p style="text-align: center; margin-bottom: 30px; opacity: 0.8;">Escolha o plano ideal para suas necessidades</p>
+    <p style="text-align: center; margin-bottom: 40px; color: var(--text-secondary); font-size: 1.1rem;">
+      Escolha o plano ideal para suas necessidades
+    </p>
     <div class="pricing">
-      <div class="card">
+      <div class="card fade-in">
         <h3>💳 Plano Mensal</h3>
-        <p>R$ 19,90<span style="font-size: 0.8rem; color: #ccc;">/mês</span></p>
+        <div class="price">R$ 19,90<span>/mês</span></div>
+        <ul style="text-align: left; margin: 20px 0; color: var(--text-secondary);">
+          <li>✅ Acesso completo a todas as funcionalidades</li>
+          <li>✅ Suporte técnico prioritário</li>
+          <li>✅ Atualizações automáticas</li>
+          <li>✅ Backup na nuvem</li>
+        </ul>
         <a class="btn" href="https://pay.kirvano.com/d9d2a24d-abb5-4ce3-9b1a-0e8d1fc1b92c" target="_blank">Começar Agora</a>
       </div>
-      <div class="card">
+      <div class="card featured fade-in">
         <h3>🏆 Plano Anual</h3>
-        <p>R$ 149,00<span style="font-size: 0.8rem; color: #ccc;">/ano</span></p>
+        <div class="price">R$ 149,00<span>/ano</span></div>
+        <ul style="text-align: left; margin: 20px 0; color: var(--text-secondary);">
+          <li>✅ Tudo do plano mensal</li>
+          <li>✅ <strong>37% de desconto</strong></li>
+          <li>✅ Suporte premium 24/7</li>
+          <li>✅ Recursos exclusivos</li>
+          <li>✅ Garantia de 30 dias</li>
+        </ul>
         <a class="btn" href="https://pay.kirvano.com/c64c54f8-c182-4eab-bcb5-8ee93dcf496d" target="_blank">Melhor Oferta</a>
       </div>
     </div>
   </section>
 
-  <section style="text-align: center; background: #1a1a1a; border-radius: 15px; padding: 40px;">
+  <!-- CTA Section -->
+  <section class="cta-section">
     <h2>🚀 Comece hoje mesmo!</h2>
-    <p style="font-size: 1.1rem; margin: 20px 0; opacity: 0.9;">
+    <p>
       Pare de operar no escuro. Tenha controle total das suas metas e proteja sua banca com inteligência.
     </p>
-    <a class="btn" href="https://pay.kirvano.com/c64c54f8-c182-4eab-bcb5-8ee93dcf496d" target="_blank" style="max-width: 300px; margin: 20px auto;">
+    <a class="btn btn-cta" href="https://pay.kirvano.com/c64c54f8-c182-4eab-bcb5-8ee93dcf496d" target="_blank">
       💎 Garantir Minha Licença
     </a>
-    <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.7;">
-      🔒 Pagamento 100% seguro via Kirvano
+    <p style="font-size: 0.9rem; margin-top: 15px; color: var(--text-muted);">
+      🔒 Pagamento 100% seguro via Kirvano • 💳 Aceita cartão e PIX
     </p>
   </section>
 
-  <footer>
+  <!-- Footer -->
+  <footer id="contact">
     <p>© 2025 Calculadora de Metas Financeiras - Todos os direitos reservados.</p>
-    <p style="margin-top: 10px; font-size: 0.8rem;">
+    <p style="margin-top: 10px; font-size: 0.9rem;">
       Desenvolvido para traders, apostadores e gestores de banca que levam seus resultados a sério.
     </p>
+    <p style="margin-top: 15px; font-size: 0.8rem;">
+      📧 Contato: <a href="mailto:contato@calculadorametas.com" style="color: var(--primary-color);">contato@calculadorametas.com</a>
+    </p>
   </footer>
+
+  <!-- JavaScript for smooth scrolling and animations -->
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add fade-in animation to elements when they come into view
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+
+    // Add scroll effect to navigation
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 100) {
+        nav.style.background = 'rgba(10, 10, 10, 0.98)';
+      } else {
+        nav.style.background = 'rgba(10, 10, 10, 0.95)';
+      }
+    });
+  </script>
 </body>
 </html>
